@@ -1,0 +1,213 @@
+.cv-template {
+  background: white;
+  padding: 2rem;
+  margin: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border-radius: 8px;
+  font-family: 'Roboto', Arial, sans-serif;
+  max-width: 600px;
+  min-height: 800px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #1976d2;
+}
+
+.header-left {
+  flex: 1;
+}
+
+.name {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1976d2;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.2;
+}
+
+.jobTitle {
+  font-size: 1.2rem;
+  color: #666;
+  margin: 0 0 1rem 0;
+  font-weight: 300;
+}
+
+.linkedin {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #1976d2;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.linkedin:hover {
+  text-decoration: underline;
+}
+
+.linkedinImage {
+  width: 16px;
+  height: 16px;
+}
+
+.header-right {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.para {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.para a {
+  color: #333;
+  text-decoration: none;
+}
+
+.para a:hover {
+  color: #1976d2;
+  text-decoration: underline;
+}
+
+.para img {
+  width: 16px;
+  height: 16px;
+  opacity: 0.7;
+}
+
+.topic-exp {
+  margin-bottom: 2rem;
+}
+
+.exp-topic {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1976d2;
+  margin: 0 0 1rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.exp-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.exps {
+  padding-left: 1rem;
+}
+
+.experience-point, .practical-point {
+  margin-bottom: 1rem;
+}
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.exp-title {
+  font-weight: 600;
+  color: #333;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.exp-company {
+  color: #666;
+  font-size: 1rem;
+  margin: 0;
+  font-style: italic;
+}
+
+.exp-date {
+  color: #888;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.exp-description {
+  color: #555;
+  line-height: 1.6;
+  margin: 0.5rem 0 0 0;
+  font-size: 0.95rem;
+  white-space: pre-wrap;
+}
+
+.education-entry {
+  margin-bottom: 1rem;
+}
+
+.education-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.25rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.education-title {
+  font-weight: 600;
+  color: #333;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.education-school {
+  color: #666;
+  font-size: 1rem;
+  margin: 0;
+  font-style: italic;
+}
+
+.education-date {
+  color: #888;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+/* Responsive design */
+/* @media (max-width: 500px) { */
+  .cv-template {
+    width: 100%;
+    padding: 1rem;
+    margin: 0.5rem;
+  }
+  
+  .header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .header-right {
+    text-align: left;
+  }
+  
+  .name {
+    font-size: 2rem;
+  }
+  
+  .exp-header, .education-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+/* } */
