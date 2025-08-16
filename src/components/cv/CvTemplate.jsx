@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../styles/right-section/cv.css';
+import '../../styles/right-section/cv.css';
 import { ExperiencePoint } from "./ExpPoint.jsx";
 import { PracticalPoint } from './PracticalPoint.jsx';
-import phoneIcon from "../assets/icons/phone.svg";
-import emailIcon from "../assets/icons/email.svg";
-import link from "../assets/icons/link.svg";
+import phoneIcon from "../../assets/icons/phone.svg";
+import emailIcon from "../../assets/icons/email.svg";
+import link from "../../assets/icons/link.svg";
 
 export default function CvTemplate({ 
   data = {}, 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useCv } from './CvContext';
+import { useCv } from '../context/CvContext';
 import CvTemplate from './CvTemplate';
 
 const LiveCvPreview = () => {

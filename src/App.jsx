@@ -1,15 +1,14 @@
-import { Container, Typography, Box, CssBaseline, Grid } from '@mui/material'
+import { Container, Typography, Box, CssBaseline, Grid, Paper } from '@mui/material'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 import '@fontsource/roboto/300.css'
 import '@fontsource/roboto/400.css'
 import '@fontsource/roboto/500.css'
 import '@fontsource/roboto/700.css'
-import GeneralInformation from './components/GeneralInformation'
-import EducationalExperience from './components/EducationalExperience'
-import PracticalExperience from './components/PracticalExperience'
-import CvTemplate from './components/CvTemplate'
-import LiveCvPreview from './components/LiveCvPreview'
-import { CvProvider } from './components/CvContext'
+import GeneralInformation from './components/forms/GeneralInformation'
+import EducationalExperience from './components/forms/EducationalExperience'
+import PracticalExperience from './components/forms/PracticalExperience'
+import LiveCvPreview from './components/cv/LiveCvPreview'
+import { CvProvider } from './components/context/CvContext'
 import './styles/CVSection.css'
 
 const theme = createTheme({
@@ -19,10 +18,39 @@ const theme = createTheme({
     },
     background: {
       default: '#f5f5f5',
+      paper: '#ffffff',
+    },
+    text: {
+      primary: '#212121',
+      secondary: '#757575',
     },
   },
   typography: {
     fontFamily: 'Roboto, Arial, sans-serif',
+    h3: {
+      fontWeight: 700,
+    },
+    h6: {
+      fontWeight: 400,
+    },
+  },
+  components: {
+    MuiContainer: {
+      styleOverrides: {
+        root: {
+          paddingLeft: '16px',
+          paddingRight: '16px',
+        },
+      },
+    },
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+          borderRadius: '8px',
+        },
+      },
+    },
   },
 });
 

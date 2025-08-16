@@ -1,0 +1,147 @@
+/* App Layout Styles - Split Screen Layout */
+
+/* Main App Container */
+.app-container {
+  display: flex;
+  height: 100vh;
+  flex-direction: row; /* Change from column to row for side-by-side layout */
+  overflow: hidden;
+  justify-content: space-around;
+}
+
+/* Left Side - Forms */
+.left-side {
+  /* width: 50%; */
+  background-color: #f5f5f5;
+  overflow-y: auto;
+  border-right: 1px solid #e0e0e0;
+}
+
+/* Hide scrollbars on left side */
+.left-side::-webkit-scrollbar {
+  width: 8px;
+}
+
+.left-side::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.left-side::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+.left-side::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+.left-content {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* App Title and Subtitle */
+.app-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #1976d2;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-family: "Roboto", Arial, sans-serif;
+}
+
+.app-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-style: italic;
+  font-family: "Roboto", Arial, sans-serif;
+}
+
+.forms-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Right Side - CV Preview */
+.right-side {
+  /* width: 50%; Change from 100% to 50% */
+  width: 50%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.preview-header {
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #e0e0e0;
+  background-color: #fafafa;
+}
+
+.preview-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #1976d2;
+  text-align: center;
+  font-weight: 600;
+  font-family: "Roboto", Arial, sans-serif;
+}
+
+.cv-preview-wrapper {
+  flex: 1;  
+  overflow: hidden;
+  padding: 0;
+  background-color: #f8f9fa;
+}
+
+/* Remove all scrollbars from CV preview */
+.cv-preview-wrapper,
+.cv-preview-wrapper * {
+  overflow: visible !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+.cv-preview-wrapper::-webkit-scrollbar,
+.cv-preview-wrapper *::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .app-container {
+    flex-direction: column;
+  }
+
+  /* .left-side,
+  .right-side {
+    width: 100%;
+  } */
+
+  .left-side {
+    height: 60vh;
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .right-side {
+    height: 40vh;
+  }
+
+  .left-content {
+    padding: 1rem;
+  }
+
+  .app-title {
+    font-size: 2rem;
+  }
+
+  .app-subtitle {
+    font-size: 1rem;
+  }
+}
+
