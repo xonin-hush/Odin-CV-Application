@@ -1,16 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import '../../styles/right-section/cv.css';
-import { ExperiencePoint } from "./ExpPoint.jsx";
-import { PracticalPoint } from './PracticalPoint.jsx';
 import phoneIcon from "../../assets/icons/phone.svg";
 import emailIcon from "../../assets/icons/email.svg";
 import link from "../../assets/icons/link.svg";
 
 export default function CvTemplate({ 
   data = {}, 
-  expPoints = [], 
-  practicalPoints = [], 
   toggleLinkedin = false 
 }) {
   return (
@@ -62,28 +58,78 @@ export default function CvTemplate({
         </div>
       </div>
 
-      {practicalPoints.length > 0 && (
+      <div className='topic-exp'>
+        <h1 className='exp-topic'>Work Experience</h1>
+        <div className='exp-container'>
+          {data.workEntries && data.workEntries.length > 0 ? (
+            data.workEntries.map((work) => (
+              <div className='exps' key={work.id}>
+                <div className="practical-entry">
+                  <div className="exp-header">
+                    <h3 className="exp-title">{work.jobTitle}</h3>
+                    <span className="exp-date">
+                      {work.startDate} {work.startDate && work.endDate ? '- ' : ''} {work.endDate}
+                    </span>
+                  </div>
+                  <h4 className="exp-company">{work.company}</h4>
+                  {work.responsibilities && (
+                    <p className="exp-description">{work.responsibilities}</p>
+                  )}
+                </div>
+              </div>
+            ))
+          ) : (
+            <div className='exps'>
+              <div className="practical-entry">
+                <div className="exp-header">
+                  <h3 className="exp-title">Software Engineer</h3>
+                  <span className="exp-date">2020 - Present</span>
+                </div>
+                <h4 className="exp-company">Tech Company</h4>
+                <p className="exp-description">Developed and maintained web applications using modern technologies.</p>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+      
+            {(data.work_jobTitle || data.work_company) && (
         <div className='topic-exp'>
           <h1 className='exp-topic'>Work Experience</h1>
           <div className='exp-container'>
-            {practicalPoints.map((practicalPoint, index) => ( 
-              <div className='exps' key={practicalPoint.id || index}>
-                <PracticalPoint practicalData={practicalPoint.Data || practicalPoint} />
+            <div className='exps'>
+              <div className="work-entry">
+                <div className="work-header">
+                  <h3 className="work-title">{data.work_jobTitle || "Software Engineer"}</h3>
+                  <span className="work-date">
+                    {data.work_startDate} {data.work_startDate && data.work_endDate ? '- ' : ''} {data.work_endDate}
+                  </span>
+                </div>
+                <h4 className="work-company">{data.work_company || "Company Name"}</h4>
+                {data.work_responsibilities && (
+                  <p className="work-description">{data.work_responsibilities}</p>
+                )}
               </div>
-            ))}
+            </div>
           </div>
         </div>
       )}
       
-      {expPoints.length > 0 && (
+      {(data.education_school || data.education_degree) && (
         <div className='topic-exp'>
           <h1 className='exp-topic'>Education</h1>
           <div className='exp-container'>
-            {expPoints.map((exp, index) => ( 
-              <div className='exps' key={exp.id || index}>
-                <ExperiencePoint exp={exp.cardData || exp} />
+            <div className='exps'>
+              <div className="education-entry">
+                <div className="education-header">
+                  <h3 className="education-title">{data.education_degree || "Bachelor of Science"}</h3>
+                  <span className="education-date">
+                    {data.education_startDate} {data.education_startDate && data.education_endDate ? '- ' : ''} {data.education_endDate}
+                  </span>
+                </div>
+                <h4 className="education-school">{data.education_school || "University Name"}</h4>
               </div>
-            ))}
+            </div>
           </div>
         </div>
       )}
@@ -93,7 +139,5 @@ export default function CvTemplate({
 
 CvTemplate.propTypes = {
   data: PropTypes.object,
-  expPoints: PropTypes.array,
-  practicalPoints: PropTypes.array,
   toggleLinkedin: PropTypes.bool,
 };

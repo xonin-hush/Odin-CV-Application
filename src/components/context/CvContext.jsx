@@ -17,6 +17,18 @@ export const CvProvider = ({ children }) => {
     phoneNumber: "",
     address: "",
     jobTitle: "Software Engineer",
+    // Education fields for real-time updates
+    education_school: "",
+    education_degree: "", 
+    education_startDate: "",
+    education_endDate: "",
+    // Work fields for real-time updates
+    work_jobTitle: "",
+    work_company: "",
+    work_startDate: "",
+    work_endDate: "",
+    work_responsibilities: "",
+    // Keep old arrays for backward compatibility
     educationEntries: [],
     workEntries: []
   });
